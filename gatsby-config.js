@@ -5,7 +5,6 @@
  * https://www.gatsbyjs.com/docs/gatsby-config/
  *
  */
-
 module.exports = {
   /**
    * Adding plugins to this array adds them to your Gatsby site.
@@ -27,11 +26,9 @@ module.exports = {
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
         url:
-          process.env.WPGRAPHQL_URL ||
-          `https://srbyrd.megaultra.space/graphql`,
+          process.env.WPGRAPHQL_URL || `https://srbyrd.megaultra.space/graphql`,
       },
     },
-
     /**
      * We need this plugin so that it adds the "File.publicURL" to our site
      * It will allow us to access static url's for assets like PDF's
@@ -45,15 +42,8 @@ module.exports = {
         path: `${__dirname}/content/assets`,
       },
     },
-
-    /**
-     * The following two plugins are required if you want to use Gatsby image
-     * See https://www.gatsbyjs.com/docs/gatsby-image/#setting-up-gatsby-image
-     * if you're curious about it.
-     */
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-
     {
       // See https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/?=gatsby-plugin-manifest
       resolve: `gatsby-plugin-manifest`,
@@ -67,14 +57,7 @@ module.exports = {
         icon: `content/assets/icon.png`,
       },
     },
-
-    // See https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/?=gatsby-plugin-react-helmet
     `gatsby-plugin-react-helmet`,
-
-    /**
-     * this (optional) plugin enables Progressive Web App + Offline functionality
-     * To learn more, visit: https://gatsby.dev/offline
-     */
-    // `gatsby-plugin-offline`,
+    "@chakra-ui/gatsby-plugin",
   ],
 }
